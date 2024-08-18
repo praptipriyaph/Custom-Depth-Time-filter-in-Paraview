@@ -1,0 +1,110 @@
+import vtk
+import numpy as np
+from paraview.vtk.util import numpy_support as ns
+
+def RequestData():
+    # Get the active source data object
+    input_data = self.GetInputDataObject(0, 0)
+    output = vtk.vtkRectilinearGrid()
+
+    # Initialize lists to store the consolidated data
+    z_coords = []
+    data_arrays = {}
+
+    # Get the number of partitions (blocks)
+    num_partitions = input_data.GetNumberOfPartitionedDataSets()
+    print(f"Number of partitions: {num_partitions}")
+
+    # Loop through each partition (assumed to represent different time steps)
+    for partition_index in range(num_partitions):
+        partitioned_dataset = input_data.GetPartitionedDataSet(partition_index)
+        print(f"Partition {partition_index} is of type: {partitioned_dataset.GetClassName()}")
+
+        # Loop through datasets within this partition
+        num_datasets = partitioned_dataset.GetNumberOfPartitions()
+        for dataset_index in range(num_datasets):
+            dataset = partitioned_dataset.GetPartition(dataset_index)
+            dataset_type = dataset.GetClassName()
+            print(f"Dataset {dataset_index} in Partition {partition_index} is of type: {dataset_type}")
+
+            # Ensure the dataset is vtkPolyData
+            if isinstance(dataset, vtk.vtkPolyData):
+                # Extract the 'so' array and point coordinates
+                points = dataset.GetPoints()
+                point_data = dataset.GetPointData()
+                salinity_array = point_data.GetArray('so')
+
+                # Check for data presence
+                if salinity_array is None or points is None:
+                    print(f"Warning: No salinity data or points found in dataset {dataset_index}")
+                    continue
+
+                # Convert VTK arrays to numpy arrays
+                points_np = ns.vtk_to_numpy(points.GetData())
+                salinity_np = ns.vtk_to_numpy(salinity_array)
+
+                # If this is the first dataset, initialize the z-coordinates
+                if len(z_coords) == 0:
+                    z_coords = np.unique(points_np[:, 2])
+                    z_coords = z_coords[::-1]  # Reverse the z_coords to match the descending order
+
+                # Initialize the salinity data array if not already done
+                if 'Salinity' not in data_arrays:
+                    data_arrays['Salinity'] = np.zeros((num_partitions, len(z_coords)))
+
+                # Store salinity values in the correct index of the 2D array
+                for j in range(points.GetNumberOfPoints()):
+                    z = points_np[j][2]  # Depth (z-coordinate)
+                    salinity_value = salinity_np[j]
+                    
+                    # Find the correct index for the current z-coordinate (reversed)
+                    z_index = np.where(z_coords == z)[0][0]
+
+                    # Store the salinity value at the correct position in the 2D array
+                    data_arrays['Salinity'][partition_index, z_index] = salinity_value
+
+                print(f"Processed dataset {dataset_index} in partition {partition_index}")
+            else:
+                print(f"Dataset {dataset_index} is not of type vtkPolyData. Skipping...")
+
+    if not data_arrays:
+        raise RuntimeError("No valid vtkPolyData datasets found.")
+
+    # Print the extracted 2D salinity array
+    print("\nExtracted 2D Salinity Array:")
+    for time_step_index, salinity_row in enumerate(data_arrays['Salinity']):
+        print(f"Time Step {time_step_index}: {salinity_row}")
+
+    # Convert lists to numpy arrays
+    time_indices = np.arange(num_partitions)
+    z_indices = np.arange(len(z_coords))
+
+    # Create vtkFloatArray for coordinates
+    x_vtk_array = ns.numpy_to_vtk(time_indices, deep=True, array_type=vtk.VTK_FLOAT)
+    x_vtk_array.SetName("TimeIndices")
+
+    y_vtk_array = ns.numpy_to_vtk(z_indices, deep=True, array_type=vtk.VTK_FLOAT)
+    y_vtk_array.SetName("ZIndices")
+
+    # Set coordinates for vtkRectilinearGrid
+    output.SetDimensions(len(time_indices), len(z_indices), 1)  # 1 in the z-dimension
+    output.SetXCoordinates(x_vtk_array)
+    output.SetYCoordinates(y_vtk_array)
+    output.SetZCoordinates(ns.numpy_to_vtk(np.zeros(1), deep=True, array_type=vtk.VTK_FLOAT))  # Single plane for 2D
+
+    # Add data arrays to vtkRectilinearGrid
+    for name, array in data_arrays.items():
+        flattened_array = array.flatten(order='F')  # Flatten in Fortran (column-major) order
+        vtk_data_array = ns.numpy_to_vtk(flattened_array, deep=True, array_type=vtk.VTK_FLOAT)
+        vtk_data_array.SetName(name)
+        output.GetPointData().AddArray(vtk_data_array)
+        print(f"Added '{name}' to vtkRectilinearGrid.")
+
+    # Set the output data object
+    self.GetOutputDataObject(0).ShallowCopy(output)
+    print("Set the output data object.")
+
+try:
+    RequestData()
+except Exception as e:
+    print(f"Error: {e}")
