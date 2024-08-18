@@ -1,0 +1,382 @@
+<CustomFilterDefinitions>
+  <CustomProxyDefinition name="CustomDepthTimePlot" group="filters">
+    <CompoundSourceProxy id="311700" servers="1">
+      <Proxy group="filters" type="ExtractTimeSteps" id="297265" servers="1" compound_name="ExtractTimeSteps1">
+        <Property name="ApproximationMode" id="297265.ApproximationMode" number_of_elements="1">
+          <Element index="0" value="2"/>
+          <Domain name="enum" id="297265.ApproximationMode.enum">
+            <Entry value="0" text="Previous Time Step"/>
+            <Entry value="1" text="Next Time Step"/>
+            <Entry value="2" text="Nearest Time Step"/>
+          </Domain>
+        </Property>
+        <Property name="Input" id="297265.Input" number_of_elements="1">
+          <Proxy value="297254" output_port="0"/>
+          <Domain name="groups" id="297265.Input.groups"/>
+          <Domain name="input_type" id="297265.Input.input_type"/>
+        </Property>
+        <Property name="SelectionMode" id="297265.SelectionMode" number_of_elements="1">
+          <Element index="0" value="1"/>
+          <Domain name="enum" id="297265.SelectionMode.enum">
+            <Entry value="0" text="Select Time Steps"/>
+            <Entry value="1" text="Select Time Range"/>
+          </Domain>
+        </Property>
+        <Property name="TimeStepIndices" id="297265.TimeStepIndices" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="timestep_index_range" id="297265.TimeStepIndices.timestep_index_range"/>
+        </Property>
+        <Property name="TimeStepInterval" id="297265.TimeStepInterval" number_of_elements="1">
+          <Element index="0" value="1"/>
+          <Domain name="range" id="297265.TimeStepInterval.range"/>
+        </Property>
+        <Property name="TimeStepRange" id="297265.TimeStepRange" number_of_elements="2">
+          <Element index="0" value="0"/>
+          <Element index="1" value="121"/>
+          <Domain name="timestep_index_range" id="297265.TimeStepRange.timestep_index_range"/>
+        </Property>
+        <Property name="TimestepValues" id="297265.TimestepValues" number_of_elements="122">
+          <Element index="0" value="608484"/>
+          <Element index="1" value="608508"/>
+          <Element index="2" value="608532"/>
+          <Element index="3" value="608556"/>
+          <Element index="4" value="608580"/>
+          <Element index="5" value="608604"/>
+          <Element index="6" value="608628"/>
+          <Element index="7" value="608652"/>
+          <Element index="8" value="608676"/>
+          <Element index="9" value="608700"/>
+          <Element index="10" value="608724"/>
+          <Element index="11" value="608748"/>
+          <Element index="12" value="608772"/>
+          <Element index="13" value="608796"/>
+          <Element index="14" value="608820"/>
+          <Element index="15" value="608844"/>
+          <Element index="16" value="608868"/>
+          <Element index="17" value="608892"/>
+          <Element index="18" value="608916"/>
+          <Element index="19" value="608940"/>
+          <Element index="20" value="608964"/>
+          <Element index="21" value="608988"/>
+          <Element index="22" value="609012"/>
+          <Element index="23" value="609036"/>
+          <Element index="24" value="609060"/>
+          <Element index="25" value="609084"/>
+          <Element index="26" value="609108"/>
+          <Element index="27" value="609132"/>
+          <Element index="28" value="609156"/>
+          <Element index="29" value="609180"/>
+          <Element index="30" value="609204"/>
+          <Element index="31" value="609228"/>
+          <Element index="32" value="609252"/>
+          <Element index="33" value="609276"/>
+          <Element index="34" value="609300"/>
+          <Element index="35" value="609324"/>
+          <Element index="36" value="609348"/>
+          <Element index="37" value="609372"/>
+          <Element index="38" value="609396"/>
+          <Element index="39" value="609420"/>
+          <Element index="40" value="609444"/>
+          <Element index="41" value="609468"/>
+          <Element index="42" value="609492"/>
+          <Element index="43" value="609516"/>
+          <Element index="44" value="609540"/>
+          <Element index="45" value="609564"/>
+          <Element index="46" value="609588"/>
+          <Element index="47" value="609612"/>
+          <Element index="48" value="609636"/>
+          <Element index="49" value="609660"/>
+          <Element index="50" value="609684"/>
+          <Element index="51" value="609708"/>
+          <Element index="52" value="609732"/>
+          <Element index="53" value="609756"/>
+          <Element index="54" value="609780"/>
+          <Element index="55" value="609804"/>
+          <Element index="56" value="609828"/>
+          <Element index="57" value="609852"/>
+          <Element index="58" value="609876"/>
+          <Element index="59" value="609900"/>
+          <Element index="60" value="609924"/>
+          <Element index="61" value="609948"/>
+          <Element index="62" value="609972"/>
+          <Element index="63" value="609996"/>
+          <Element index="64" value="610020"/>
+          <Element index="65" value="610044"/>
+          <Element index="66" value="610068"/>
+          <Element index="67" value="610092"/>
+          <Element index="68" value="610116"/>
+          <Element index="69" value="610140"/>
+          <Element index="70" value="610164"/>
+          <Element index="71" value="610188"/>
+          <Element index="72" value="610212"/>
+          <Element index="73" value="610236"/>
+          <Element index="74" value="610260"/>
+          <Element index="75" value="610284"/>
+          <Element index="76" value="610308"/>
+          <Element index="77" value="610332"/>
+          <Element index="78" value="610356"/>
+          <Element index="79" value="610380"/>
+          <Element index="80" value="610404"/>
+          <Element index="81" value="610428"/>
+          <Element index="82" value="610452"/>
+          <Element index="83" value="610476"/>
+          <Element index="84" value="610500"/>
+          <Element index="85" value="610524"/>
+          <Element index="86" value="610548"/>
+          <Element index="87" value="610572"/>
+          <Element index="88" value="610596"/>
+          <Element index="89" value="610620"/>
+          <Element index="90" value="610644"/>
+          <Element index="91" value="610668"/>
+          <Element index="92" value="610692"/>
+          <Element index="93" value="610716"/>
+          <Element index="94" value="610740"/>
+          <Element index="95" value="610764"/>
+          <Element index="96" value="610788"/>
+          <Element index="97" value="610812"/>
+          <Element index="98" value="610836"/>
+          <Element index="99" value="610860"/>
+          <Element index="100" value="610884"/>
+          <Element index="101" value="610908"/>
+          <Element index="102" value="610932"/>
+          <Element index="103" value="610956"/>
+          <Element index="104" value="610980"/>
+          <Element index="105" value="611004"/>
+          <Element index="106" value="611028"/>
+          <Element index="107" value="611052"/>
+          <Element index="108" value="611076"/>
+          <Element index="109" value="611100"/>
+          <Element index="110" value="611124"/>
+          <Element index="111" value="611148"/>
+          <Element index="112" value="611172"/>
+          <Element index="113" value="611196"/>
+          <Element index="114" value="611220"/>
+          <Element index="115" value="611244"/>
+          <Element index="116" value="611268"/>
+          <Element index="117" value="611292"/>
+          <Element index="118" value="611316"/>
+          <Element index="119" value="611340"/>
+          <Element index="120" value="611364"/>
+          <Element index="121" value="611388"/>
+        </Property>
+      </Proxy>
+      <Proxy group="filters" type="GroupTimeSteps" id="297276" servers="1" compound_name="GroupTimeSteps1">
+        <Property name="Input" id="297276.Input" number_of_elements="1">
+          <Proxy value="297265" output_port="0"/>
+          <Domain name="groups" id="297276.Input.groups"/>
+        </Property>
+      </Proxy>
+      <Proxy group="filters" type="ProgrammableFilter" id="297511" servers="1" compound_name="ProgrammableFilter1">
+        <Property name="CopyArrays" id="297511.CopyArrays" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="297511.CopyArrays.bool"/>
+        </Property>
+        <Property name="InformationScript" id="297511.InformationScript" number_of_elements="1">
+          <Element index="0" value=""/>
+        </Property>
+        <Property name="Input" id="297511.Input" number_of_elements="1">
+          <Proxy value="297276" output_port="0"/>
+          <Domain name="groups" id="297511.Input.groups"/>
+          <Domain name="input_type" id="297511.Input.input_type"/>
+        </Property>
+        <Property name="OutputDataSetType" id="297511.OutputDataSetType" number_of_elements="1">
+          <Element index="0" value="3"/>
+          <Domain name="enum" id="297511.OutputDataSetType.enum">
+            <Entry value="8" text="Same as Input"/>
+            <Entry value="0" text="vtkPolyData"/>
+            <Entry value="2" text="vtkStructuredGrid"/>
+            <Entry value="3" text="vtkRectilinearGrid"/>
+            <Entry value="4" text="vtkUnstructuredGrid"/>
+            <Entry value="6" text="vtkImageData"/>
+            <Entry value="10" text="vtkUniformGrid"/>
+            <Entry value="13" text="vtkMultiblockDataSet"/>
+            <Entry value="15" text="vtkHierarchicalBoxDataSet"/>
+            <Entry value="32" text="vtkHyperTreeGrid"/>
+            <Entry value="19" text="vtkTable"/>
+            <Entry value="33" text="vtkMolecule"/>
+            <Entry value="37" text="vtkPartitionedDataSet"/>
+            <Entry value="38" text="vtkPartitionedDataSetCollection"/>
+          </Domain>
+        </Property>
+        <Property name="PythonPath" id="297511.PythonPath" number_of_elements="1">
+          <Element index="0" value=""/>
+        </Property>
+        <Property name="Script" id="297511.Script" number_of_elements="1">
+          <Element index="0" value="import vtk&#xa;import numpy as np&#xa;from paraview.vtk.util import numpy_support as ns&#xa;&#xa;def RequestData():&#xa;    # Get the active source data object&#xa;    input_data = self.GetInputDataObject(0, 0)&#xa;    output = vtk.vtkRectilinearGrid()&#xa;&#xa;    # Initialize lists to store the consolidated data&#xa;    z_coords = []&#xa;    data_arrays = {}&#xa;&#xa;    # Get the number of partitions (blocks)&#xa;    num_partitions = input_data.GetNumberOfPartitionedDataSets()&#xa;    print(f&#x22;Number of partitions: {num_partitions}&#x22;)&#xa;&#xa;    # Loop through each partition (assumed to represent different time steps)&#xa;    for partition_index in range(num_partitions):&#xa;        partitioned_dataset = input_data.GetPartitionedDataSet(partition_index)&#xa;        print(f&#x22;Partition {partition_index} is of type: {partitioned_dataset.GetClassName()}&#x22;)&#xa;&#xa;        # Loop through datasets within this partition&#xa;        num_datasets = partitioned_dataset.GetNumberOfPartitions()&#xa;        for dataset_index in range(num_datasets):&#xa;            dataset = partitioned_dataset.GetPartition(dataset_index)&#xa;            dataset_type = dataset.GetClassName()&#xa;            print(f&#x22;Dataset {dataset_index} in Partition {partition_index} is of type: {dataset_type}&#x22;)&#xa;&#xa;            # Ensure the dataset is vtkPolyData&#xa;            if isinstance(dataset, vtk.vtkPolyData):&#xa;                # Extract the &#x27;so&#x27; array and point coordinates&#xa;                points = dataset.GetPoints()&#xa;                point_data = dataset.GetPointData()&#xa;                salinity_array = point_data.GetArray(&#x27;so&#x27;)&#xa;&#xa;                # Check for data presence&#xa;                if salinity_array is None or points is None:&#xa;                    print(f&#x22;Warning: No salinity data or points found in dataset {dataset_index}&#x22;)&#xa;                    continue&#xa;&#xa;                # Convert VTK arrays to numpy arrays&#xa;                points_np = ns.vtk_to_numpy(points.GetData())&#xa;                salinity_np = ns.vtk_to_numpy(salinity_array)&#xa;&#xa;                # If this is the first dataset, initialize the z-coordinates&#xa;                if len(z_coords) == 0:&#xa;                    z_coords = np.unique(points_np[:, 2])&#xa;                    z_coords = z_coords[::-1]  # Reverse the z_coords to match the descending order&#xa;&#xa;                # Initialize the salinity data array if not already done&#xa;                if &#x27;Salinity&#x27; not in data_arrays:&#xa;                    data_arrays[&#x27;Salinity&#x27;] = np.zeros((num_partitions, len(z_coords)))&#xa;&#xa;                # Store salinity values in the correct index of the 2D array&#xa;                for j in range(points.GetNumberOfPoints()):&#xa;                    z = points_np[j][2]  # Depth (z-coordinate)&#xa;                    salinity_value = salinity_np[j]&#xa;                    &#xa;                    # Find the correct index for the current z-coordinate (reversed)&#xa;                    z_index = np.where(z_coords == z)[0][0]&#xa;&#xa;                    # Store the salinity value at the correct position in the 2D array&#xa;                    data_arrays[&#x27;Salinity&#x27;][partition_index, z_index] = salinity_value&#xa;&#xa;                print(f&#x22;Processed dataset {dataset_index} in partition {partition_index}&#x22;)&#xa;            else:&#xa;                print(f&#x22;Dataset {dataset_index} is not of type vtkPolyData. Skipping...&#x22;)&#xa;&#xa;    if not data_arrays:&#xa;        raise RuntimeError(&#x22;No valid vtkPolyData datasets found.&#x22;)&#xa;&#xa;    # Print the extracted 2D salinity array&#xa;    print(&#x22;\nExtracted 2D Salinity Array:&#x22;)&#xa;    for time_step_index, salinity_row in enumerate(data_arrays[&#x27;Salinity&#x27;]):&#xa;        print(f&#x22;Time Step {time_step_index}: {salinity_row}&#x22;)&#xa;&#xa;    # Convert lists to numpy arrays&#xa;    time_indices = np.arange(num_partitions)&#xa;    z_indices = np.arange(len(z_coords))&#xa;&#xa;    # Create vtkFloatArray for coordinates&#xa;    x_vtk_array = ns.numpy_to_vtk(time_indices, deep=True, array_type=vtk.VTK_FLOAT)&#xa;    x_vtk_array.SetName(&#x22;TimeIndices&#x22;)&#xa;&#xa;    y_vtk_array = ns.numpy_to_vtk(z_indices, deep=True, array_type=vtk.VTK_FLOAT)&#xa;    y_vtk_array.SetName(&#x22;ZIndices&#x22;)&#xa;&#xa;    # Set coordinates for vtkRectilinearGrid&#xa;    output.SetDimensions(len(time_indices), len(z_indices), 1)  # 1 in the z-dimension&#xa;    output.SetXCoordinates(x_vtk_array)&#xa;    output.SetYCoordinates(y_vtk_array)&#xa;    output.SetZCoordinates(ns.numpy_to_vtk(np.zeros(1), deep=True, array_type=vtk.VTK_FLOAT))  # Single plane for 2D&#xa;&#xa;    # Add data arrays to vtkRectilinearGrid&#xa;    for name, array in data_arrays.items():&#xa;        flattened_array = array.flatten(order=&#x27;F&#x27;)  # Flatten in Fortran (column-major) order&#xa;        vtk_data_array = ns.numpy_to_vtk(flattened_array, deep=True, array_type=vtk.VTK_FLOAT)&#xa;        vtk_data_array.SetName(name)&#xa;        output.GetPointData().AddArray(vtk_data_array)&#xa;        print(f&#x22;Added &#x27;{name}&#x27; to vtkRectilinearGrid.&#x22;)&#xa;&#xa;    # Set the output data object&#xa;    self.GetOutputDataObject(0).ShallowCopy(output)&#xa;    print(&#x22;Set the output data object.&#x22;)&#xa;&#xa;try:&#xa;    RequestData()&#xa;except Exception as e:&#xa;    print(f&#x22;Error: {e}&#x22;)&#xa;"/>
+        </Property>
+        <Property name="TimestepValues" id="297511.TimestepValues"/>
+        <Property name="UpdateExtentScript" id="297511.UpdateExtentScript" number_of_elements="1">
+          <Element index="0" value=""/>
+        </Property>
+      </Proxy>
+      <Proxy group="filters" type="Cut" id="296968" servers="1" compound_name="Slice1">
+        <Property name="ContourValues" id="296968.ContourValues" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bounds" id="296968.ContourValues.bounds"/>
+        </Property>
+        <Property name="CutFunction" id="296968.CutFunction" number_of_elements="1">
+          <Proxy value="296964"/>
+          <Domain name="proxy_list" id="296968.CutFunction.proxy_list">
+            <Proxy value="296962"/>
+            <Proxy value="296963"/>
+            <Proxy value="296964"/>
+            <Proxy value="296965"/>
+          </Domain>
+        </Property>
+        <Property name="HyperTreeGridImplicitFunction" id="296968.HyperTreeGridImplicitFunction" number_of_elements="1">
+          <Proxy value="296967"/>
+          <Domain name="proxy_list" id="296968.HyperTreeGridImplicitFunction.proxy_list">
+            <Proxy value="296966"/>
+            <Proxy value="296967"/>
+          </Domain>
+        </Property>
+        <Property name="Input" id="296968.Input" number_of_elements="1">
+          <Domain name="groups" id="296968.Input.groups"/>
+          <Domain name="input_type" id="296968.Input.input_type"/>
+        </Property>
+        <Property name="InputBounds" id="296968.InputBounds">
+          <Domain name="bounds" id="296968.InputBounds.bounds"/>
+        </Property>
+        <Property name="MergePoints" id="296968.MergePoints" number_of_elements="1">
+          <Element index="0" value="1"/>
+          <Domain name="bool" id="296968.MergePoints.bool"/>
+        </Property>
+        <Property name="PreserveInputCells" id="296968.PreserveInputCells" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="296968.PreserveInputCells.bool"/>
+        </Property>
+        <Property name="SetDual" id="296968.SetDual" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="296968.SetDual.bool"/>
+        </Property>
+        <Property name="Triangulate the slice" id="296968.Triangulate the slice" number_of_elements="1">
+          <Element index="0" value="1"/>
+          <Domain name="bool" id="296968.Triangulate the slice.bool"/>
+        </Property>
+      </Proxy>
+      <Proxy group="filters" type="Cut" id="297254" servers="1" compound_name="Slice2">
+        <Property name="ContourValues" id="297254.ContourValues" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bounds" id="297254.ContourValues.bounds"/>
+        </Property>
+        <Property name="CutFunction" id="297254.CutFunction" number_of_elements="1">
+          <Proxy value="297250"/>
+          <Domain name="proxy_list" id="297254.CutFunction.proxy_list">
+            <Proxy value="297248"/>
+            <Proxy value="297249"/>
+            <Proxy value="297250"/>
+            <Proxy value="297251"/>
+          </Domain>
+        </Property>
+        <Property name="HyperTreeGridImplicitFunction" id="297254.HyperTreeGridImplicitFunction" number_of_elements="1">
+          <Proxy value="297253"/>
+          <Domain name="proxy_list" id="297254.HyperTreeGridImplicitFunction.proxy_list">
+            <Proxy value="297252"/>
+            <Proxy value="297253"/>
+          </Domain>
+        </Property>
+        <Property name="Input" id="297254.Input" number_of_elements="1">
+          <Proxy value="296968" output_port="0"/>
+          <Domain name="groups" id="297254.Input.groups"/>
+          <Domain name="input_type" id="297254.Input.input_type"/>
+        </Property>
+        <Property name="InputBounds" id="297254.InputBounds">
+          <Domain name="bounds" id="297254.InputBounds.bounds"/>
+        </Property>
+        <Property name="MergePoints" id="297254.MergePoints" number_of_elements="1">
+          <Element index="0" value="1"/>
+          <Domain name="bool" id="297254.MergePoints.bool"/>
+        </Property>
+        <Property name="PreserveInputCells" id="297254.PreserveInputCells" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="297254.PreserveInputCells.bool"/>
+        </Property>
+        <Property name="SetDual" id="297254.SetDual" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="297254.SetDual.bool"/>
+        </Property>
+        <Property name="Triangulate the slice" id="297254.Triangulate the slice" number_of_elements="1">
+          <Element index="0" value="0"/>
+          <Domain name="bool" id="297254.Triangulate the slice.bool"/>
+        </Property>
+      </Proxy>
+      <Proxy group="implicit_functions" type="Plane" id="296964" servers="21" compound_name="auto_296964">
+        <Property name="Normal" id="296964.Normal" number_of_elements="3">
+          <Element index="0" value="1"/>
+          <Element index="1" value="0"/>
+          <Element index="2" value="0"/>
+          <Domain name="range" id="296964.Normal.range"/>
+        </Property>
+        <Property name="Offset" id="296964.Offset" number_of_elements="1">
+          <Element index="0" value="0"/>
+        </Property>
+        <Property name="Origin" id="296964.Origin" number_of_elements="3">
+          <Element index="0" value="85.5"/>
+          <Element index="1" value="15"/>
+          <Element index="2" value="-111.48461472988129"/>
+          <Domain name="range" id="296964.Origin.range"/>
+        </Property>
+      </Proxy>
+      <Proxy group="implicit_functions" type="Plane" id="296967" servers="21" compound_name="auto_296967">
+        <Property name="Normal" id="296967.Normal" number_of_elements="3">
+          <Element index="0" value="1"/>
+          <Element index="1" value="0"/>
+          <Element index="2" value="0"/>
+          <Domain name="range" id="296967.Normal.range"/>
+        </Property>
+        <Property name="Offset" id="296967.Offset" number_of_elements="1">
+          <Element index="0" value="0"/>
+        </Property>
+        <Property name="Origin" id="296967.Origin" number_of_elements="3">
+          <Element index="0" value="85.5"/>
+          <Element index="1" value="15"/>
+          <Element index="2" value="-111.48461472988129"/>
+          <Domain name="range" id="296967.Origin.range"/>
+        </Property>
+      </Proxy>
+      <Proxy group="implicit_functions" type="Plane" id="297250" servers="21" compound_name="auto_297250">
+        <Property name="Normal" id="297250.Normal" number_of_elements="3">
+          <Element index="0" value="0"/>
+          <Element index="1" value="1"/>
+          <Element index="2" value="0"/>
+          <Domain name="range" id="297250.Normal.range"/>
+        </Property>
+        <Property name="Offset" id="297250.Offset" number_of_elements="1">
+          <Element index="0" value="0"/>
+        </Property>
+        <Property name="Origin" id="297250.Origin" number_of_elements="3">
+          <Element index="0" value="85.5"/>
+          <Element index="1" value="15"/>
+          <Element index="2" value="-111.48461472988129"/>
+          <Domain name="range" id="297250.Origin.range"/>
+        </Property>
+      </Proxy>
+      <Proxy group="implicit_functions" type="Plane" id="297253" servers="21" compound_name="auto_297253">
+        <Property name="Normal" id="297253.Normal" number_of_elements="3">
+          <Element index="0" value="1"/>
+          <Element index="1" value="0"/>
+          <Element index="2" value="0"/>
+          <Domain name="range" id="297253.Normal.range"/>
+        </Property>
+        <Property name="Offset" id="297253.Offset" number_of_elements="1">
+          <Element index="0" value="0"/>
+        </Property>
+        <Property name="Origin" id="297253.Origin" number_of_elements="3">
+          <Element index="0" value="85.5"/>
+          <Element index="1" value="15"/>
+          <Element index="2" value="-111.48461472988129"/>
+          <Domain name="range" id="297253.Origin.range"/>
+        </Property>
+      </Proxy>
+      <ExposedProperties>
+        <Property name="ApproximationMode" proxy_name="ExtractTimeSteps1" exposed_name="Approximation Mode"/>
+        <Property name="Input" proxy_name="Slice1" exposed_name="Input"/>
+        <Property name="ContourValues" proxy_name="Slice1" exposed_name="Slice Offset Values"/>
+      </ExposedProperties>
+      <OutputPort name="Output" proxy="ProgrammableFilter1" port_index="0"/>
+      <Hints>
+        <ShowInMenu/>
+      </Hints>
+    </CompoundSourceProxy>
+  </CustomProxyDefinition>
+</CustomFilterDefinitions>
