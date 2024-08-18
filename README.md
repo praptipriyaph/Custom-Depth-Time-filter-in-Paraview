@@ -37,7 +37,10 @@ The entire pipeline has been saved as a custom filter named `CustomDepthTimePlot
 This custom filter simplifies the process of visualizing depth vs time plots in ParaView. By following the steps provided, you can easily import and apply the `CustomDepthTimePlot` filter to your NetCDF data, enabling quick and efficient analysis.
 
 Feel free to explore and modify the custom filter to suit your specific needs!
-<img width="1440" alt="Screenshot 2024-08-19 at 2 36 07 AM" src="https://github.com/user-attachments/assets/b3348d9f-02c6-402d-af16-01e5d7c3f8c5">
+
 <img width="1440" alt="Screenshot 2024-08-18 at 10 29 34 PM" src="https://github.com/user-attachments/assets/f580de01-e063-4b86-8e58-560f780210e6">
+
+<img width="1440" alt="Screenshot 2024-08-19 at 2 36 07 AM" src="https://github.com/user-attachments/assets/b3348d9f-02c6-402d-af16-01e5d7c3f8c5">
+
 ![18 aug](https://github.com/user-attachments/assets/f34e0c2a-1c9a-493e-84b1-8f787fa56fba)
 
