@@ -37,7 +37,11 @@ To use this script for depth vs. time analysis in ParaView:
 4. Apply the `ExtractTimeSteps` and `GroupTimeSteps` filters to manage the time dimension.
 5. Use the Programmable Filter with this script to extract and visualize salinity changes over time and depth.
 
-The final output is a `vtkRectilinearGrid`, perfect for generating depth vs. time plots that can reveal temporal and vertical patterns in salinity within the dataset.
+The final output is a `vtkRectilinearGrid`, perfect for generating depth vs. time plots that can reveal temporal and vertical patterns in salinity within the dataset. The `vtkRectilinearGrid` can be further analysed in Paraview using VTK. 
+
+![18 aug](https://github.com/user-attachments/assets/7e7f6de1-ae15-451b-a3d0-e031e66794f3)
+Depth Vs Salinity plot of BoB dataset
+
 
 ## Time and Space Complexity Analysis
 
