@@ -13,7 +13,7 @@ To create a depth vs. time plot using this script in ParaView, use the following
 
 1. **NetCDF File:** The source dataset containing the necessary data arrays.
 2. **Slice 1:** A slice filter to isolate a specific plane in the dataset.
-3. **Slice 2:** Another slice filter, if needed, to further refine the region of interest.
+3. **Slice 2:** Another slice filter, to further refine the region of interest - to get the data along a line.
 4. **ExtractTimeSteps:** A filter that isolates data for specific time steps.
 5. **GroupTimeSteps:** Combines data from different time steps into a single output.
 6. **Programmable Filter:** This custom script processes the grouped time steps, extracting and mapping salinity values along the line onto a `vtkRectilinearGrid`.
