@@ -7,7 +7,7 @@ This project involves a ParaView pipeline designed to visualize salinity data as
 The pipeline used to create the depth vs time plot consists of the following steps:
 1. **NetCDF File**: The input dataset containing salinity data.
 2. **Slice 1**: Cuts through the dataset at a specified plane.
-3. **Slice 2**: Further slices the data to focus on the desired region.
+3. **Slice 2**: Further slices the data to focus on the desired region i.e. slices the data again to get the data along a line.
 4. **ExtractTimeSteps**: Extracts the time steps of interest from the dataset.
 5. **GroupTimeSteps**: Groups the extracted time steps for processing.
 6. **Programmable Filter**: Processes the data to create a `vtkRectilinearGrid` representing the depth vs time plot.
