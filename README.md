@@ -38,3 +38,37 @@ To use this script for depth vs. time analysis in ParaView:
 5. Use the Programmable Filter with this script to extract and visualize salinity changes over time and depth.
 
 The final output is a `vtkRectilinearGrid`, perfect for generating depth vs. time plots that can reveal temporal and vertical patterns in salinity within the dataset.
+
+## Time and Space Complexity Analysis
+
+### Time Complexity
+
+1. **Partition Loop:** The script iterates over `num_partitions`, where each partition corresponds to a different time step. This results in a linear complexity of `O(P)`, where `P` is the number of partitions (time steps).
+
+2. **Dataset Loop:** Within each partition, the script loops through `num_datasets`, which is usually a constant (often 1 in many cases), so the complexity is `O(D)` where `D` is the number of datasets per partition.
+
+3. **Points Loop:** For each dataset, the script iterates through the points (`points.GetNumberOfPoints()`). The complexity for this loop is `O(N)`, where `N` is the number of points in the dataset.
+
+4. **Overall Time Complexity:** The overall time complexity of the script is `O(P * D * N)`, where:
+   - `P` is the number of partitions (time steps).
+   - `D` is the number of datasets per partition.
+   - `N` is the number of points in each dataset.
+
+### Space Complexity
+
+1. **Z-coordinates:** The space required to store `z_coords` is `O(M)`, where `M` is the number of unique z-coordinates (depth values).
+
+2. **Data Arrays:** The space required to store the salinity data in `data_arrays` is `O(P * M)`, where:
+   - `P` is the number of partitions (time steps).
+   - `M` is the number of unique z-coordinates.
+
+3. **Output Grid:** The output `vtkRectilinearGrid` has dimensions corresponding to the number of time steps and z-coordinates, resulting in a space complexity of `O(P * M)`.
+
+4. **Overall Space Complexity:** The overall space complexity is `O(P * M)`, primarily due to storing the salinity data and the rectilinear grid output.
+
+### Summary
+
+- **Time Complexity:** `O(P * D * N)`
+- **Space Complexity:** `O(P * M)`
+
+Where `P` is the number of partitions (time steps), `D` is the number of datasets per partition, `N` is the number of points in each dataset, and `M` is the number of unique z-coordinates.
