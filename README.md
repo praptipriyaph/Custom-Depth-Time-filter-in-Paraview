@@ -9,7 +9,7 @@ The pipeline used to create the depth vs time plot consists of the following ste
 2. **Slice 1**: Cuts through the dataset at a specified plane.
 3. **Slice 2**: Further slices the data to focus on the desired region i.e. slices the data again to get the data along a line.
 4. **ExtractTimeSteps**: Extracts the time steps of interest from the dataset.
-5. **GroupTimeSteps**: Groups the extracted time steps into a vtkPartitionedDataSetCollection, for processing.
+5. **GroupTimeSteps**: Groups the extracted time steps into a `vtkPartitionedDataSetCollection`, for processing.
 6. **Programmable Filter**: Processes the data to create a `vtkRectilinearGrid` representing the depth vs time plot.
 
 ## Using the Custom Filter
